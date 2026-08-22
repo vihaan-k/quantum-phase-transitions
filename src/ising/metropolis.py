@@ -1,5 +1,7 @@
 import numpy as np
+from numba import njit
 
+@njit
 def metropolis_update(spin_grid, temperature):
     """Perform one Metropolis update: pick one random spin and attempt a flip."""
     i = np.random.randint(spin_grid.shape[0])

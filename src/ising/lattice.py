@@ -6,14 +6,10 @@ def create_lattice(L=8):
 
 def total_energy(spin_grid, J=1.0):
     """Compute the 2D Ising Hamiltonian with periodic boundaries."""
-    energy = 0.0
-    for i in range(spin_grid.shape[0]):
-        for j in range(spin_grid.shape[1]):
-            energy += -J * spin_grid[i, j] * (
-                spin_grid[i, (j + 1) % spin_grid.shape[1]]
-                + spin_grid[(i + 1) % spin_grid.shape[0], j]
-            )
-    return energy
+    # Sum interactions with right and down neighbors (handles periodic boundaries automatically)
+    right_neighbors = np.roll(spin_grid, -1, axis=1)
+    down_neighbors = np.roll(spin_grid, -1, axis=0)
+    return -J * np.sum(spin_grid * (right_neighbors + down_neighbors))
 
 def magnetization(spin_grid):
     """Compute the magnetization of the spin grid."""
