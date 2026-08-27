@@ -12,7 +12,12 @@ SIZE_COLORS_EQUILIBRATIONS = {
 }
 
 
-def temperature_scan(temperatures, L=8, n_equilibration=1000, n_measurements=1000):
+def temperature_scan(
+        temperatures: np.typing.ArrayLike, 
+        L: int = 8, 
+        n_equilibration: int = 1000, 
+        n_measurements: int = 1000
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """Run equilibrium + measurement sweeps at a fixed lattice size."""
     avg_abs_magnetization = []
     avg_energy = []
@@ -38,7 +43,11 @@ def temperature_scan(temperatures, L=8, n_equilibration=1000, n_measurements=100
         np.asarray(susceptibility),
     )
 
-def scan_all_sizes(temperatures, sizes=(8, 16, 32), n_measurements=1000):
+def scan_all_sizes(
+        temperatures: np.typing.ArrayLike, 
+        sizes: tuple[int, ...] = (8, 16, 32), 
+        n_measurements: int = 1000
+) -> dict[int, tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]]:
     """Run the temperature scan for several lattice sizes."""
     results = {}
     for L in sizes:
@@ -51,7 +60,10 @@ def scan_all_sizes(temperatures, sizes=(8, 16, 32), n_measurements=1000):
         )
     return results
 
-def plot_energy_vs_temperature(results, output_path):
+def plot_energy_vs_temperature(
+        results: dict[int, tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]],
+        output_path: str
+) -> None:
     """Plot average energy vs temperature for all lattice sizes."""
     fig, ax = plt.subplots(figsize=(9, 6))
 
@@ -75,7 +87,10 @@ def plot_energy_vs_temperature(results, output_path):
     fig.savefig(output_path)
     plt.close(fig)
 
-def plot_energy_per_spin_vs_temperature(results, output_path):
+def plot_energy_per_spin_vs_temperature(
+        results: dict[int, tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]],
+        output_path: str
+) -> None:
     """Plot average energy per spin vs temperature for all lattice sizes."""
     fig, ax = plt.subplots(figsize=(9, 6))
 
@@ -101,7 +116,10 @@ def plot_energy_per_spin_vs_temperature(results, output_path):
     plt.close(fig)
 
 
-def plot_magnetization_vs_temperature(results, output_path):
+def plot_magnetization_vs_temperature(
+        results: dict[int, tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]],
+        output_path: str
+) -> None:
     """Plot average absolute magnetization vs temperature for all lattice sizes."""
     fig, ax = plt.subplots(figsize=(9, 6))
 
@@ -125,7 +143,11 @@ def plot_magnetization_vs_temperature(results, output_path):
     fig.savefig(output_path)
     plt.close(fig)
 
-def plot_susceptibility_vs_temperature(results, output_path):
+
+def plot_susceptibility_vs_temperature(
+    results: dict[int, tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]],
+    output_path: str
+) -> None:
     """Plot susceptibility vs temperature for all lattice sizes."""
     fig, ax = plt.subplots(figsize=(9, 6))
 
@@ -150,7 +172,7 @@ def plot_susceptibility_vs_temperature(results, output_path):
     plt.close(fig)
 
 
-def main():
+def main() -> None:
     temperatures = np.arange(0.5, 4.1, 0.1)
     sizes = (8,16,32)
     results = scan_all_sizes(
@@ -159,7 +181,7 @@ def main():
         n_measurements=1000,
     )
 
-    output_dir = "results/figures"
+    output_dir = "results/figures/physics_diagnostics"
     os.makedirs(output_dir, exist_ok=True)
     plot_energy_vs_temperature(results, os.path.join(output_dir, "energy_vs_temperature.png"))
     plot_energy_per_spin_vs_temperature(results, os.path.join(output_dir, "energy_per_spin_vs_temperature.png"))

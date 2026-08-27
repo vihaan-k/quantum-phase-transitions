@@ -5,6 +5,8 @@ src/ising/__init__.py
 src/ising/lattice.py
 src/ising/metropolis.py
 src/ising/simulation.py
+src/preprocessing/__init__.py
+src/preprocessing/downsample.py
 src/quantum_phase_transitions.egg-info/PKG-INFO
 src/quantum_phase_transitions.egg-info/SOURCES.txt
 src/quantum_phase_transitions.egg-info/dependency_links.txt
