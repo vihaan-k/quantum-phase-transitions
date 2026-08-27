@@ -14,7 +14,7 @@ def sweep(spin_grid: np.ndarray, temperature: float) -> np.ndarray:
 def simulate(
         spin_grid: np.ndarray, 
         temperature: float, 
-        n_equilibration: int = 1000, 
+        n_equilibrations: int = 1000, 
         n_measurements: int = 1000
 ) -> tuple[np.ndarray, list[float], list[float]]:
     """Run an Ising simulation and record equilibrium measurements.
@@ -22,7 +22,7 @@ def simulate(
     """
 
     # Equilibration
-    for _ in range(n_equilibration):
+    for _ in range(n_equilibrations):
         spin_grid = sweep(spin_grid, temperature)
 
     # Measurements

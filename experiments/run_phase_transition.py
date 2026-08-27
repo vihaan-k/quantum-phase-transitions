@@ -15,7 +15,7 @@ SIZE_COLORS_EQUILIBRATIONS = {
 def temperature_scan(
         temperatures: np.typing.ArrayLike, 
         L: int = 8, 
-        n_equilibration: int = 1000, 
+        n_equilibrations: int = 1000, 
         n_measurements: int = 1000
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """Run equilibrium + measurement sweeps at a fixed lattice size."""
@@ -28,7 +28,7 @@ def temperature_scan(
         lattice, energies, magnetizations = simulate(
             lattice,
             temperature=temperature,
-            n_equilibration=n_equilibration,
+            n_equilibrations=n_equilibrations,
             n_measurements=n_measurements,
         )
 
