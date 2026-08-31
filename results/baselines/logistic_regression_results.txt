@@ -1,0 +1,32 @@
+=== LOGISTIC REGRESSION FEATURE COMPARISON RESULTS ===
+
+16x16 Raw Spins (Option 1):
+  Best Hyperparameter C:   0.0001
+  Mean 5-Fold CV Accuracy: 53.75%
+  Test Set Accuracy:       52.19%
+
+16x16 |M| Only (Option 2):
+  Best Hyperparameter C:   0.7743
+  Mean 5-Fold CV Accuracy: 93.44%
+  Test Set Accuracy:       93.70%
+
+16x16 Spins + |M| (Option 3):
+  Best Hyperparameter C:   16.6810
+  Mean 5-Fold CV Accuracy: 96.27%
+  Test Set Accuracy:       96.07%
+
+4x4 Raw Spins (Option 1):
+  Best Hyperparameter C:   0.0001
+  Mean 5-Fold CV Accuracy: 53.61%
+  Test Set Accuracy:       52.70%
+
+4x4 |M| Only (Option 2):
+  Best Hyperparameter C:   0.0001
+  Mean 5-Fold CV Accuracy: 89.60%
+  Test Set Accuracy:       90.37%
+
+4x4 Spins + |M| (Option 3):
+  Best Hyperparameter C:   278.2559
+  Mean 5-Fold CV Accuracy: 94.44%
+  Test Set Accuracy:       94.26%
+

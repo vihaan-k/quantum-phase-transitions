@@ -1,0 +1,32 @@
+=== LINEAR SVM FEATURE COMPARISON RESULTS ===
+
+16x16 Raw Spins (Linear SVM):
+  Best Params:             {'C': 1.0}
+  Mean 5-Fold CV Accuracy: 53.63%
+  Test Set Accuracy:       51.37%
+
+16x16 |M| Only (Linear SVM):
+  Best Params:             {'C': 1.0}
+  Mean 5-Fold CV Accuracy: 93.35%
+  Test Set Accuracy:       93.70%
+
+16x16 Spins + |M| (Linear SVM):
+  Best Params:             {'C': 100.0}
+  Mean 5-Fold CV Accuracy: 96.22%
+  Test Set Accuracy:       96.00%
+
+4x4 Raw Spins (Linear SVM):
+  Best Params:             {'C': 1.0}
+  Mean 5-Fold CV Accuracy: 53.19%
+  Test Set Accuracy:       52.78%
+
+4x4 |M| Only (Linear SVM):
+  Best Params:             {'C': 0.01}
+  Mean 5-Fold CV Accuracy: 89.60%
+  Test Set Accuracy:       90.37%
+
+4x4 Spins + |M| (Linear SVM):
+  Best Params:             {'C': 100.0}
+  Mean 5-Fold CV Accuracy: 94.08%
+  Test Set Accuracy:       93.74%
+
