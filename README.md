@@ -5,5 +5,4 @@ for learning physical phase transitions in the 2D Ising model.
 
 ## Status
 
-Currently implementing and validating the Ising model
-Monte Carlo simulator.
+V1 in progress
