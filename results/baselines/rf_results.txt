@@ -1,0 +1,32 @@
+=== RANDOM FOREST BASELINE RESULTS ===
+
+16x16 Raw Spins:
+  Best Params:             {'max_depth': None, 'min_samples_split': 5, 'n_estimators': 50}
+  Mean 5-Fold CV Accuracy: 97.05%
+  Test Set Accuracy:       96.89%
+
+16x16 |M| Only:
+  Best Params:             {'max_depth': 10, 'min_samples_split': 50, 'n_estimators': 50}
+  Mean 5-Fold CV Accuracy: 95.52%
+  Test Set Accuracy:       96.15%
+
+16x16 Spins + |M|:
+  Best Params:             {'max_depth': None, 'min_samples_split': 2, 'n_estimators': 250}
+  Mean 5-Fold CV Accuracy: 97.11%
+  Test Set Accuracy:       97.44%
+
+4x4 Raw Spins:
+  Best Params:             {'max_depth': None, 'min_samples_split': 50, 'n_estimators': 50}
+  Mean 5-Fold CV Accuracy: 95.86%
+  Test Set Accuracy:       95.30%
+
+4x4 |M| Only:
+  Best Params:             {'max_depth': None, 'min_samples_split': 2, 'n_estimators': 50}
+  Mean 5-Fold CV Accuracy: 93.20%
+  Test Set Accuracy:       93.19%
+
+4x4 Spins + |M|:
+  Best Params:             {'max_depth': 10, 'min_samples_split': 2, 'n_estimators': 100}
+  Mean 5-Fold CV Accuracy: 95.88%
+  Test Set Accuracy:       95.22%
+
